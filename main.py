@@ -2,7 +2,8 @@
 from utils import (
     add_glucose_reading,
     import_glucose_readings,
-    search_glucose_readings
+    search_glucose_readings,
+    plot_glucose_trend
 )
 
 def main_menu():
@@ -11,7 +12,8 @@ def main_menu():
         print("1. Add a new glucose reading")
         print("2. Import readings from a CSV")
         print("3. Search readings")
-        print("4. Exit")
+        print("4. View glucose level graph")
+        print("5. Exit")
         
         choice = input("Choose an option (1-4): ").strip()
 
@@ -54,6 +56,9 @@ def main_menu():
                 print("Invalid option.")
 
         elif choice == "4":
+            plot_glucose_trend()
+
+        elif choice == "5":
             print("Goodbye!")
             break
 

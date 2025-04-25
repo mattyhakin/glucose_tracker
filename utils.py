@@ -74,3 +74,32 @@ def search_glucose_readings(by="date", value=None):
         print("No matching records found.")
     else:
         print(result)
+
+import matplotlib.pyplot as plt
+
+def plot_glucose_trend():
+    try:
+        df = pd.read_csv("glucose_readings.csv")
+        df.columns = df.columns.str.strip().str.lower()
+        df["date"] = pd.to_datetime(df["date"], format="%d/%m/%Y", errors="coerce")
+    except FileNotFoundError:
+        print("No readings found.")
+        return
+
+    if df.empty:
+        print("No data to plot.")
+        return
+
+    df = df.sort_values("date")
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(df["date"], df["level"], marker='o')
+    plt.title("Blood Glucose Levels Over Time")
+    plt.xlabel("Date")
+    plt.ylabel("Glucose Level")
+    plt.grid(True)
+    plt.tight_layout()
+
+    filename = "glucose_trend.png"
+    plt.savefig(filename)
+    print(f"Graph saved as {filename}. You can download or open it from the file panel.")
