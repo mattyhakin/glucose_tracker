@@ -1,41 +1,65 @@
 #My glucose reading tracker
-import pandas as pd 
-import csv
-from datetime import datetime
+from utils import (
+    add_glucose_reading,
+    import_glucose_readings,
+    search_glucose_readings
+)
 
-def add_glucose_reading(date, time, level, notes):
-    with open("glucose_readings.csv", mode="a", newline="") as file:
-        writer = csv.writer(file)
-        writer.writerow([date, time, level, notes])
-    print("Reading added successfully.")
+def main_menu():
+    while True:
+        print("\n--- Glucose Tracker Menu ---")
+        print("1. Add a new glucose reading")
+        print("2. Import readings from a CSV")
+        print("3. Search readings")
+        print("4. Exit")
+        
+        choice = input("Choose an option (1-4): ").strip()
 
-def import_glucose_readings(import_file):
-    try:
-        df = pd.read_csv(import_file)
-    except FileNotFoundError:
-        print("Import file not found.")
-        return
+        if choice == "1":
+            date = input("Enter date (DD/MM/YYYY): ")
+            time = input("Enter time (HH:MM or -): ")
+            try:
+                level = float(input("Enter glucose level: "))
+            except ValueError:
+                print("Invalid glucose level.")
+                continue
+            notes = input("Enter notes (or -): ")
+            add_glucose_reading(date, time, level, notes)
 
-    rows_to_add = []
-    for _, row in df.iterrows():
-        try:
-            date = datetime.strptime(str(row["Date"]).strip(), "%d/%m/%Y").strftime("%d/%m/%Y")
-            time = str(row["Time"]).strip() if not pd.isna(row["Time"]) else "-"
-            level = float(row["Glucose Level"])
-            notes = str(row["Notes"]).strip() if not pd.isna(row["Notes"]) else "-"
-            rows_to_add.append([date, time, level, notes])
-        except Exception as e:
-            print(f"Skipping row due to error: {e}")
-            continue
+        elif choice == "2":
+            filename = input("Enter the import file name (e.g. import_me.csv): ")
+            import_glucose_readings(filename)
 
-    # Write to your main file
-    with open("glucose_readings.csv", "a", newline="") as file:
-        writer = csv.writer(file)
-        writer.writerows(rows_to_add)
+        elif choice == "3":
+            print("\nSearch by:")
+            print("1. Date")
+            print("2. Level above")
+            print("3. Level below")
+            print("4. Notes")
+            sub_choice = input("Choose search type (1-4): ").strip()
 
-    print(f"Imported {len(rows_to_add)} rows successfully.")
+            if sub_choice == "1":
+                value = input("Enter date (DD/MM/YYYY): ")
+                search_glucose_readings("date", value)
+            elif sub_choice == "2":
+                value = input("Enter minimum level: ")
+                search_glucose_readings("level_above", value)
+            elif sub_choice == "3":
+                value = input("Enter maximum level: ")
+                search_glucose_readings("level_below", value)
+            elif sub_choice == "4":
+                value = input("Enter keyword for notes: ")
+                search_glucose_readings("note", value)
+            else:
+                print("Invalid option.")
+
+        elif choice == "4":
+            print("Goodbye!")
+            break
+
+        else:
+            print("Invalid choice. Try again.")
 
 # Example usage:
 if __name__ == "__main__":
-    # Manual test: replace with your actual values or input()
-    import_glucose_readings("import_me.csv")
+    main_menu()
