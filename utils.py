@@ -205,8 +205,13 @@ def plot_combined_trend():
     ax1.grid(True)
     ax1.legend()
 
-    # HbA1c plot
+   # HbA1c plot
     ax2.plot(hba1c_df["date"], hba1c_df["hba1c"], label="HbA1c (%)", marker='o', color='purple', linewidth=2)
+
+# Add labels above each point
+    for i, row in hba1c_df.iterrows():
+        ax2.text(row["date"], row["hba1c"] + 0.05, f"{row['hba1c']}%", ha='center', va='bottom', fontsize=9, color='purple')
+
     ax2.set_title("HbA1c Trend")
     ax2.set_ylabel("HbA1c (%)")
     ax2.set_xlabel("Date")
@@ -223,11 +228,13 @@ def add_hba1c_reading(date_str, hba1c_value):
         date_str = str(date_str).strip()
         parsed_date = datetime.strptime(date_str, "%d/%m/%Y").strftime("%d/%m/%Y")
         hba1c_value = float(hba1c_value)
+        # Format value to remove .0 if it's a whole number
+        hba1c_str = str(int(hba1c_value)) if hba1c_value.is_integer() else str(hba1c_value)
     except (ValueError, TypeError):
         print("Invalid date or HbA1c value.")
         return
 
     with open("hba1c_readings.csv", mode="a", newline="") as file:
         writer = csv.writer(file)
-        writer.writerow([parsed_date, hba1c_value])
+        writer.writerow([parsed_date, hba1c_str])
     print("HbA1c reading added successfully.")
