@@ -3,7 +3,8 @@ from utils import (
     add_glucose_reading,
     import_glucose_readings,
     search_glucose_readings,
-    plot_glucose_trend
+    plot_glucose_trend,
+    plot_glucose_with_rolling_avg
 )
 
 def main_menu():
@@ -13,7 +14,8 @@ def main_menu():
         print("2. Import readings from a CSV")
         print("3. Search readings")
         print("4. View glucose level graph")
-        print("5. Exit")
+        print("5. View graph with rolling average")
+        print("6. Exit")
         
         choice = input("Choose an option (1-4): ").strip()
 
@@ -38,7 +40,7 @@ def main_menu():
             print("2. Level above")
             print("3. Level below")
             print("4. Notes")
-            sub_choice = input("Choose search type (1-4): ").strip()
+            sub_choice = input("Choose search type (1-6): ").strip()
 
             if sub_choice == "1":
                 value = input("Enter date (DD/MM/YYYY): ")
@@ -59,6 +61,9 @@ def main_menu():
             plot_glucose_trend()
 
         elif choice == "5":
+            plot_glucose_with_rolling_avg()
+
+        elif choice == "6":
             print("Goodbye!")
             break
 

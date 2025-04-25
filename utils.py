@@ -103,3 +103,39 @@ def plot_glucose_trend():
     filename = "glucose_trend.png"
     plt.savefig(filename)
     print(f"Graph saved as {filename}. You can download or open it from the file panel.")
+
+def plot_glucose_with_rolling_avg():
+    try:
+        df = pd.read_csv("glucose_readings.csv")
+        df.columns = df.columns.str.strip().str.lower()
+        df["date"] = pd.to_datetime(df["date"], format="%d/%m/%Y", errors="coerce")
+    except FileNotFoundError:
+        print("No readings found.")
+        return
+
+    if df.empty:
+        print("No data to plot.")
+        return
+
+    df = df.sort_values("date")
+    df = df.dropna(subset=["level"])
+
+    # Calculate rolling averages
+    df["7_day_avg"] = df["level"].rolling(window=7).mean()
+    df["30_day_avg"] = df["level"].rolling(window=30).mean()
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(df["date"], df["level"], marker='o', label="Glucose Level", alpha=0.6)
+    plt.plot(df["date"], df["7_day_avg"], color='red', linewidth=2, label="7-Day Avg")
+    plt.plot(df["date"], df["30_day_avg"], color='green', linewidth=2, label="30-Day Avg")
+
+    plt.title("Blood Glucose with 7- and 30-Day Rolling Averages")
+    plt.xlabel("Date")
+    plt.ylabel("Glucose Level")
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+
+    filename = "glucose_trend_avg_7d_30d.png"
+    plt.savefig(filename)
+    print(f"Saved graph as {filename}")
