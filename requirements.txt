@@ -1,1 +1,6 @@
-streamlit\npandas\nmatplotlib
+streamlit
+pandas
+matplotlib
+numpy
+python-dateutil
+pyyaml
