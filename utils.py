@@ -238,3 +238,34 @@ def add_hba1c_reading(date_str, hba1c_value):
         writer = csv.writer(file)
         writer.writerow([parsed_date, hba1c_str])
     print("HbA1c reading added successfully.")
+
+def add_supply_item(item_name, quantity):
+    from datetime import datetime
+    date_str = datetime.now().strftime("%d/%m/%Y")
+
+    with open("supplies.csv", mode="a", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow([item_name, quantity, date_str])
+    
+    return f"Added {item_name} with {quantity} units."
+
+def update_supply_quantity(item_name, quantity_change):
+    df = pd.read_csv("supplies.csv")
+    df.columns = df.columns.str.strip().str.lower()
+
+    if item_name.lower() in df["item"].str.lower().values:
+        index = df[df["item"].str.lower() == item_name.lower()].index[0]
+        df.at[index, "quantity"] += quantity_change
+        df.at[index, "last updated"] = pd.Timestamp.now().strftime("%d/%m/%Y")
+        df.to_csv("supplies.csv", index=False)
+        return f"Updated {item_name} by {quantity_change} units."
+    else:
+        return "Item not found."
+    
+def get_supplies():
+    try:
+        df = pd.read_csv("supplies.csv")
+        df.columns = df.columns.str.strip().str.lower()
+        return df
+    except FileNotFoundError:
+        return pd.DataFrame()
