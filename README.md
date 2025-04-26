@@ -5,10 +5,12 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-1.2--dev-blue" alt="version">
+  <img src="https://img.shields.io/github/v/release/yourusername/glucose_tracker?color=brightgreen" alt="Latest Release">
 </p>
 
-# Diabetes Tracker Web App
+<p align="center">
+  <img src="https://img.shields.io/github/license/yourusername/glucose_tracker?color=brightgreen" alt="License: MIT">
+</p>
 
 # Diabetes Tracker Web App
 
@@ -107,7 +109,7 @@ python reset_data.py
 
 *Built with love using Python and Streamlit.*
 
-## 🔮 Future Plans
+ 🔮 Future Plans
 
 Here are some ideas for future updates to the Diabetes Tracker app:
 
@@ -147,3 +149,22 @@ Version 1.1 (Current)
 - ✅ Import glucose readings via CSV
 - ✅ View graphs for glucose trends and HbA1c trends
 - ✅ Full deployment to Streamlit Cloud
+
+[View full Release Notes ➡️](RELEASE_NOTES.md)
+
+ 🤝 Contributing
+
+Contributions are welcome!
+
+If you have suggestions for improvements, ideas for new features, or find any bugs, please feel free to:
+
+- Fork the repository
+- Create a new branch (`git checkout -b feature-YourFeatureName`)
+- Make your changes
+- Commit your changes (`git commit -m 'Add some feature'`)
+- Push to the branch (`git push origin feature-YourFeatureName`)
+- Open a Pull Request
+
+Or, you can simply open an Issue if you want to discuss something first.
+
+Thanks for helping make this app better! 🎯
