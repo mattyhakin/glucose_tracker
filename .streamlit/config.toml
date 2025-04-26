@@ -1,0 +1,10 @@
+[theme]
+base="light"
+
+[server]
+headless=true
+
+[general]
+email = "youremail@example.com"
+browser_title = "Diabetes Tracker App"
+favicon = "https://static.streamlit.io/examples/favicon.ico"
