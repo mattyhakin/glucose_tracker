@@ -5,8 +5,10 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-1.0-brightgreen" alt="version">
+  <img src="https://img.shields.io/badge/Version-1.2--dev-blue" alt="version">
 </p>
+
+# Diabetes Tracker Web App
 
 # Diabetes Tracker Web App
 
@@ -117,3 +119,31 @@ Here are some ideas for future updates to the Diabetes Tracker app:
 - 🖼️ **Customizable dashboard themes** (light/dark mode)
 - 📱 **Mobile-friendly layout improvements** for easier use on phones and tablets
 - 📊 **Add trendlines or prediction models** for glucose data
+
+🆕 What's New
+
+Version 1.2 (Current)
+
+- TBC
+
+Version 1.1 (Current)
+
+- 🎯 Moved working data to `/data/` folder
+- 📂 Added `/templates/` folder with blank CSV templates
+- 🔄 Added `/examples/` folder with sample import files
+- 🛠 Added `reset_data.py` script to reset working data easily
+- 🚀 Improved README structure and project documentation
+- 🖼️ Added custom Streamlit app favicon and page title
+- 📥 Setup First Time Instructions for new users
+
+---
+
+ Version 1.0 (Current)
+
+- ✅ Initial launch of Diabetes Tracker web app
+- ✅ Record blood glucose readings
+- ✅ Record HbA1c results
+- ✅ Track diabetic supplies
+- ✅ Import glucose readings via CSV
+- ✅ View graphs for glucose trends and HbA1c trends
+- ✅ Full deployment to Streamlit Cloud
