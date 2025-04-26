@@ -16,7 +16,7 @@ from utils import (
 )
 
 st.set_page_config(page_title="Diabetes Tracker", layout="wide")
-st.title("\ud83e\uddea Diabetes Tracker Dashboard")
+st.title("📈 Diabetes Tracker Dashboard")
 
 # Sidebar Menu
 menu = st.sidebar.selectbox("Menu", (
