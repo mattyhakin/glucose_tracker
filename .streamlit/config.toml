@@ -7,4 +7,4 @@ headless=true
 [general]
 email = "youremail@example.com"
 browser_title = "Diabetes Tracker App"
-favicon = "https://static.streamlit.io/examples/favicon.ico"
+favicon = "https://img.icons8.com/ios-filled/50/fa314a/blood-drop.png"
