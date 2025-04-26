@@ -34,6 +34,8 @@ Built using **Python**, **Streamlit**, **Pandas**, and **Matplotlib**.
 - View graphs for glucose trends and HbA1c
 - Manage diabetic supplies inventory
 - Download and upload data easily
+- An example `import_me.csv` file is included in the `examples/` folder.
+- You can use it to practice importing glucose readings into the app.
 
 ---
 
@@ -49,14 +51,39 @@ Built using **Python**, **Streamlit**, **Pandas**, and **Matplotlib**.
 ## 📂 Folder Structure
 ```
 glucose_tracker/
-├── glucose_readings.csv      # Blood glucose readings
-├── hba1c_readings.csv         # HbA1c readings
-├── supplies.csv               # Diabetic supplies
-├── utils.py                   # Backend functions
-├── streamlit_app.py           # Web app (Streamlit)
-├── requirements.txt           # App dependencies
-└── README.md                  # Project documentation
+├── data/
+│   ├── glucose_readings.csv      # Your actual working glucose data
+│   ├── hba1c_readings.csv         # Your actual working HbA1c data
+│   ├── supplies.csv               # Your actual working supplies data
+├── templates/
+│   ├── glucose_readings_template.csv   # Blank glucose readings template
+│   ├── hba1c_readings_template.csv      # Blank HbA1c template
+│   ├── supplies_template.csv           # Blank supplies template
+├── examples/
+│   ├── import_me.csv              # Example file for testing imports (optional)
+├── .streamlit/
+│   └── config.toml                 # App configuration (page title, favicon, etc.)
+├── utils.py                        # All backend functions
+├── streamlit_app.py                 # Streamlit front-end app
+├── requirements.txt                 # Python package dependencies
+├── reset_data.py                    # NEW! Resets data from templates
+└── README.md                        # Documentation for project
 ```
+
+---
+
+## 📥 First Setup
+
+When first cloning or using the app:
+
+- The real working data is located in the `data/` folder.
+- If you prefer to start fresh, copy the blank templates from the `templates/` folder into the `data/` folder.
+- Templates include:
+  - glucose_readings_template.csv
+  - hba1c_readings_template.csv
+  - supplies_template.csv
+
+✅ This ensures the app has the correct structure even if no readings have been entered yet.
 
 ---
 
@@ -65,6 +92,16 @@ glucose_tracker/
 This project was built to help manage diabetes more easily — track important readings, monitor trends, and keep your supplies organized, all from one simple app.
 
 ---
+
+## 🔄 Resetting Data
+
+To reset your app's data back to a clean state (blank templates):
+
+1. Open your terminal inside the project folder.
+2. Run:
+
+```bash
+python reset_data.py
 
 *Built with love using Python and Streamlit.*
 

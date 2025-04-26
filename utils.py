@@ -6,7 +6,7 @@ from datetime import datetime
 # --- Glucose Functions ---
 
 def add_glucose_reading(date, time, level, notes):
-    with open("glucose_readings.csv", mode="a", newline="") as file:
+    with open("data/glucose_readings.csv", mode="a", newline="") as file:
         writer = csv.writer(file)
         writer.writerow([date, time, level, notes])
     return "Glucose reading added successfully."
@@ -26,7 +26,7 @@ def import_glucose_readings(import_file):
             except Exception:
                 continue
 
-        with open("glucose_readings.csv", "a", newline="") as file:
+        with open("data/glucose_readings.csv", "a", newline="") as file:
             writer = csv.writer(file)
             writer.writerows(rows_to_add)
 
@@ -37,7 +37,7 @@ def import_glucose_readings(import_file):
 
 def search_glucose_readings(by="date", value=None):
     try:
-        df = pd.read_csv("glucose_readings.csv")
+        df = pd.read_csv("data/glucose_readings.csv")
         df.columns = df.columns.str.strip().str.lower()
         df["date"] = pd.to_datetime(df["date"], format="%d/%m/%Y", errors="coerce")
     except FileNotFoundError:
@@ -68,7 +68,7 @@ def search_glucose_readings(by="date", value=None):
 
 def plot_glucose_trend():
     try:
-        df = pd.read_csv("glucose_readings.csv")
+        df = pd.read_csv("data/glucose_readings.csv")
         df.columns = df.columns.str.strip().str.lower()
         df["date"] = pd.to_datetime(df["date"], format="%d/%m/%Y", errors="coerce")
     except FileNotFoundError:
@@ -93,7 +93,7 @@ def plot_glucose_trend():
 
 def plot_glucose_with_rolling_avg():
     try:
-        df = pd.read_csv("glucose_readings.csv")
+        df = pd.read_csv("data/glucose_readings.csv")
         df.columns = df.columns.str.strip().str.lower()
         df["date"] = pd.to_datetime(df["date"], format="%d/%m/%Y", errors="coerce")
     except FileNotFoundError:
@@ -128,7 +128,7 @@ def plot_glucose_with_rolling_avg():
 
 def plot_hba1c_trend():
     try:
-        df = pd.read_csv("hba1c_readings.csv")
+        df = pd.read_csv("data/hba1c_readings.csv")
         df.columns = df.columns.str.strip().str.lower()
         df.rename(columns={"hba1c (%)": "hba1c"}, inplace=True)
         df["date"] = pd.to_datetime(df["date"], format="%d/%m/%Y", errors="coerce")
@@ -154,7 +154,7 @@ def plot_hba1c_trend():
 
 def plot_combined_trend():
     try:
-        glucose_df = pd.read_csv("glucose_readings.csv")
+        glucose_df = pd.read_csv("data/glucose_readings.csv")
         glucose_df.columns = glucose_df.columns.str.strip().str.lower()
         glucose_df["date"] = pd.to_datetime(glucose_df["date"], format="%d/%m/%Y", errors="coerce")
         glucose_df = glucose_df.sort_values("date")
@@ -162,7 +162,7 @@ def plot_combined_trend():
         glucose_df["7_day_avg"] = glucose_df["level"].rolling(window=7).mean()
         glucose_df["30_day_avg"] = glucose_df["level"].rolling(window=30).mean()
 
-        hba1c_df = pd.read_csv("hba1c_readings.csv")
+        hba1c_df = pd.read_csv("data/hba1c_readings.csv")
         hba1c_df.columns = hba1c_df.columns.str.strip().str.lower()
         hba1c_df.rename(columns={"hba1c (%)": "hba1c"}, inplace=True)
         hba1c_df["date"] = pd.to_datetime(hba1c_df["date"], format="%d/%m/%Y", errors="coerce")
@@ -206,7 +206,7 @@ def add_hba1c_reading(date_str, hba1c_value):
     except (ValueError, TypeError):
         return "Invalid date or HbA1c value."
 
-    with open("hba1c_readings.csv", mode="a", newline="") as file:
+    with open("data/hba1c_readings.csv", mode="a", newline="") as file:
         writer = csv.writer(file)
         writer.writerow([parsed_date, hba1c_str])
     return "HbA1c reading added successfully."
@@ -215,27 +215,27 @@ def add_hba1c_reading(date_str, hba1c_value):
 
 def add_supply_item(item_name, quantity):
     date_str = datetime.now().strftime("%d/%m/%Y")
-    with open("supplies.csv", mode="a", newline="") as file:
+    with open("data/supplies.csv", mode="a", newline="") as file:
         writer = csv.writer(file)
         writer.writerow([item_name, quantity, date_str])
     return f"Added {item_name} with {quantity} units."
 
 def update_supply_quantity(item_name, quantity_change):
-    df = pd.read_csv("supplies.csv")
+    df = pd.read_csv("data/supplies.csv")
     df.columns = df.columns.str.strip().str.lower()
 
     if item_name.lower() in df["item"].str.lower().values:
         index = df[df["item"].str.lower() == item_name.lower()].index[0]
         df.at[index, "quantity"] += quantity_change
         df.at[index, "last updated"] = pd.Timestamp.now().strftime("%d/%m/%Y")
-        df.to_csv("supplies.csv", index=False)
+        df.to_csv("data/supplies.csv", index=False)
         return f"Updated {item_name} by {quantity_change} units."
     else:
         return "Item not found."
 
 def get_supplies():
     try:
-        df = pd.read_csv("supplies.csv")
+        df = pd.read_csv("data/supplies.csv")
         df.columns = df.columns.str.strip().str.lower()
         return df
     except FileNotFoundError:
@@ -245,7 +245,7 @@ def get_supplies():
 
 def get_glucose_df():
     try:
-        df = pd.read_csv("glucose_readings.csv")
+        df = pd.read_csv("data/glucose_readings.csv")
         df.columns = df.columns.str.strip().str.lower()
         df["date"] = pd.to_datetime(df["date"], format="%d/%m/%Y", errors="coerce")
         return df.sort_values("date")
@@ -254,7 +254,7 @@ def get_glucose_df():
 
 def get_hba1c_df():
     try:
-        df = pd.read_csv("hba1c_readings.csv")
+        df = pd.read_csv("data/hba1c_readings.csv")
         df.columns = df.columns.str.strip().str.lower()
         df.rename(columns={"hba1c (%)": "hba1c"}, inplace=True)
         df["date"] = pd.to_datetime(df["date"], format="%d/%m/%Y", errors="coerce")
