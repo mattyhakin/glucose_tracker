@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://glucosetracker-4nhbmymvcbnhqdgpx79vjn.streamlit.app">
+    <img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" alt="Open in Streamlit">
+  </a>
+</p>
+
 # Diabetes Tracker Web App
 
 A simple and personal web app to track:
