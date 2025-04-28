@@ -153,6 +153,14 @@ Version 1.1 (Current)
 
 [View full Release Notes ➡️](RELEASE_NOTES.md)
 
+## 🛣️ Roadmap
+
+- [x] Version 1.0 - Initial Release
+- [x] Version 1.1 - Features Expansion
+- [ ] [Version 1.2 - In Development 🚧](https://github.com/mattyhakin/glucose_tracker/milestone/1)
+
+Visit the [Milestones page](https://github.com/mattyhakin/glucose_tracker/milestones) to see progress on upcoming features!
+
  🤝 Contributing
 
 Contributions are welcome!
