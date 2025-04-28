@@ -1,7 +1,13 @@
 # 📋 Release Notes - Diabetes Tracker
 
-## Version 1.2 (Coming Soon 🚀)
-- TBC
+## Version 1.2 (In Development 🚧)
+
+### Planned Features:
+- Add new section to download only last 30 days of glucose readings
+- Improve supplies management (track expiration dates)
+- Add a settings page for user preferences
+- Mobile layout improvements
+- Minor visual improvements
 
 ---
 
