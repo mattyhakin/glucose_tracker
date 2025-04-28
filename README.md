@@ -193,3 +193,9 @@ Thanks for helping make this app better! 🎯
 ---
 
 *Have more ideas? Feel free to suggest by opening an Issue!*
+
+## 📨 Need Help or Have Ideas?
+
+- Report a [Bug](https://github.com/mattyhakin/glucose_tracker/issues/new?template=bug_report.md)
+- Suggest a [Feature](https://github.com/mattyhakin/glucose_tracker/issues/new?template=feature_request.md)
+- Ask a [Question](https://github.com/mattyhakin/glucose_tracker/issues/new?template=contact_us.md)
