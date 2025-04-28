@@ -5,11 +5,12 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/v/release/yourusername/glucose_tracker?color=brightgreen" alt="Latest Release">
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/github/license/yourusername/glucose_tracker?color=brightgreen" alt="License: MIT">
+  <a href="https://github.com/mattyhakin/glucose_tracker/releases">
+    <img src="https://img.shields.io/github/v/release/mattyhakin/glucose_tracker?include_prereleases&label=release&logo=github&style=flat-square" alt="GitHub release">
+  </a>
+  <a href="https://github.com/mattyhakin/glucose_tracker/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/mattyhakin/glucose_tracker?style=flat-square" alt="GitHub license">
+  </a>
 </p>
 
 # Diabetes Tracker Web App
