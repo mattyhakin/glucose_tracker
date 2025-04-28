@@ -11,6 +11,7 @@
   <a href="https://github.com/mattyhakin/glucose_tracker/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/mattyhakin/glucose_tracker?style=flat-square" alt="GitHub license">
   </a>
+  <img src="https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=flat-square" alt="Contributions Welcome">
 </p>
 
 # Diabetes Tracker Web App
@@ -163,7 +164,8 @@ Visit the [Milestones page](https://github.com/mattyhakin/glucose_tracker/milest
 
  🤝 Contributing
 
-Contributions are welcome!
+We welcome contributions of all kinds — bug fixes, feature suggestions, ideas!  
+Feel free to open an Issue or a Pull Request anytime.
 
 If you have suggestions for improvements, ideas for new features, or find any bugs, please feel free to:
 
@@ -174,6 +176,20 @@ If you have suggestions for improvements, ideas for new features, or find any bu
 - Push to the branch (`git push origin feature-YourFeatureName`)
 - Open a Pull Request
 
-Or, you can simply open an Issue if you want to discuss something first.
 
 Thanks for helping make this app better! 🎯
+
+## 🌟 Future Ideas
+
+- Add Dark Mode toggle for better nighttime use
+- Integrate Google Sheets or OneDrive backup option
+- Add email reminders for recording new readings
+- Enable tracking of insulin dosages and timings
+- Weekly and monthly report generation (PDF download)
+- Mobile-friendly view improvements
+- Set personal glucose targets and alerts
+- Add basic analytics (average glucose over time, variability trends)
+
+---
+
+*Have more ideas? Feel free to suggest by opening an Issue!*
