@@ -75,23 +75,32 @@ Built using **Python**, **Streamlit**, **Pandas**, and **Matplotlib**.
 ## 📂 Folder Structure
 ```
 glucose_tracker/
-├── data/
-│   ├── glucose_readings.csv      # Your actual working glucose data
-│   ├── hba1c_readings.csv         # Your actual working HbA1c data
-│   ├── supplies.csv               # Your actual working supplies data
-├── templates/
-│   ├── glucose_readings_template.csv   # Blank glucose readings template
-│   ├── hba1c_readings_template.csv      # Blank HbA1c template
-│   ├── supplies_template.csv           # Blank supplies template
-├── examples/
-│   ├── import_me.csv              # Example file for testing imports (optional)
-├── .streamlit/
-│   └── config.toml                 # App configuration (page title, favicon, etc.)
-├── utils.py                        # All backend functions
-├── streamlit_app.py                 # Streamlit front-end app
-├── requirements.txt                 # Python package dependencies
-├── reset_data.py                    # NEW! Resets data from templates
-└── README.md                        # Documentation for project
+├── .github/                    # GitHub configurations (contact form, issue templates)
+├── .streamlit/                 # Streamlit settings (favicon, title)
+├── pycache/                # Python cache (auto-generated)
+├── data/                       # Active working data (user input)
+│   ├── glucose_readings.csv
+│   ├── hba1c_readings.csv
+│   └── supplies.csv
+├── example/                    # Example file for importing
+│   └── import_me.csv
+├── templates/                  # Blank template CSVs
+│   ├── glucose_readings_template.csv
+│   ├── hba1c_readings_template.csv
+│   └── supplies_template.csv
+├── main.py                     # CLI tool (optional legacy use)
+├── requirements.txt            # Python package dependencies
+├── reset_data.py               # Script to reset data from templates
+├── streamlit_app.py            # Main Streamlit frontend app
+├── utils.py                    # Core backend logic
+├── .gitignore                  # Files to exclude from Git tracking
+├── CHANGELOG.md                # Version-by-version changelog
+├── CODE_OF_CONDUCT.md          # Community standards
+├── CONTRIBUTING.md             # How to contribute
+├── LICENSE                     # Project license
+├── README.md                   # Project overview
+├── RELEASE_NOTES.md            # Detailed release version notes
+└── SECURITY.md                 # Security guidelines and vulnerability reporting
 ```
 
 ---
