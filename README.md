@@ -194,8 +194,39 @@ Thanks for helping make this app better! 🎯
 
 *Have more ideas? Feel free to suggest by opening an Issue!*
 
+## 🛠 Development Progress
+
+We track all new features, improvements, and bug fixes on our Project Board:
+
+➡️ [View the Glucose Tracker Development Board](https://github.com/mattyhakin/glucose_tracker/projects/1)
+
+You can see:
+
+- What features are planned
+- What's currently in progress
+- What's already completed
+
+Stay updated and feel free to contribute!
+
+---
+
 ## 📨 Need Help or Have Ideas?
 
 - Report a [Bug](https://github.com/mattyhakin/glucose_tracker/issues/new?template=bug_report.md)
 - Suggest a [Feature](https://github.com/mattyhakin/glucose_tracker/issues/new?template=feature_request.md)
 - Ask a [Question](https://github.com/mattyhakin/glucose_tracker/issues/new?template=contact_us.md)
+
+## 🙏 Acknowledgements
+
+This project was made possible thanks to:
+
+- [Streamlit](https://streamlit.io/) - for making web app development simple and powerful
+- [Pandas](https://pandas.pydata.org/) - for data handling and manipulation
+- [Matplotlib](https://matplotlib.org/) - for beautiful graphs and plots
+- [GitHub](https://github.com/) - for hosting, version control, and collaboration tools
+- [Contributor Covenant](https://www.contributor-covenant.org/) - for the Code of Conduct template
+- [Shields.io](https://shields.io/) - for badges
+
+Special thanks to the open-source community for inspiration and guidance.
+
+---
