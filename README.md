@@ -32,6 +32,24 @@ Built using **Python**, **Streamlit**, **Pandas**, and **Matplotlib**.
 
 ---
 
+## 📚 Table of Contents
+
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Folder Structure](#-folder-structure)
+- [First Setup](#-first-setup)
+- [About](#-about)
+- [Resetting Data](#-resetting-data)
+- [What's New](#-whats-new)
+- [Future Plans and Ideas](#-future-plans-and-ideas)
+- [Roadmap](#-roadmap)
+- [Development Progress](#-development-progress)
+- [Need Help or Have Ideas](#-need-help-or-have-ideas)
+- [Contributing](#-contributing)
+- [Acknowledgements](#-acknowledgements)
+
+---
+
 ## 📋 Features
 
 - Add new glucose readings manually
@@ -111,19 +129,7 @@ python reset_data.py
 
 *Built with love using Python and Streamlit.*
 
- 🔮 Future Plans
-
-Here are some ideas for future updates to the Diabetes Tracker app:
-
-- 📥 **Import HbA1c results via CSV** (not just manual entry)
-- 📤 **Export blood glucose and HbA1c graphs as images**
-- 🔒 **Optional user login** for better privacy
-- 📅 **Reminders and notifications** for logging glucose and supplies
-- 📈 **Daily, weekly, and monthly reports** generation
-- 🖼️ **Customizable dashboard themes** (light/dark mode)
-- 📱 **Mobile-friendly layout improvements** for easier use on phones and tablets
-- 📊 **Add trendlines or prediction models** for glucose data
-
+ 
 🆕 What's New
 
 Version 1.2 (Current)
@@ -153,6 +159,26 @@ Version 1.1 (Current)
 - ✅ Full deployment to Streamlit Cloud
 
 [View full Release Notes ➡️](RELEASE_NOTES.md)
+
+## 🔮 Future Plans and Ideas
+
+We have lots of exciting features planned to make the Diabetes Tracker even more helpful!
+
+- 📥 Import HbA1c results via CSV (not just manual entry)
+- 📤 Export blood glucose and HbA1c graphs as images
+- 🔒 Optional user login for better privacy
+- 📅 Reminders and notifications for logging glucose and supplies
+- 📈 Daily, weekly, and monthly reports generation
+- 🖼️ Customizable dashboard themes (light/dark mode)
+- 📱 Mobile-friendly layout improvements
+- 📊 Add trendlines or prediction models for glucose data
+- 🌓 Dark Mode toggle for nighttime use
+- ☁️ Google Sheets or OneDrive backup integration
+- 📬 Email reminders for overdue readings
+- ⚡ Set personal glucose targets and alerts
+- 📈 Add basic analytics (average glucose, variability trends)
+
+*Have more ideas? Feel free to [open an Issue](https://github.com/mattyhakin/glucose_tracker/issues/new/choose) and suggest!*
 
 ## 🛣️ Roadmap
 
