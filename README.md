@@ -1,4 +1,7 @@
 <p align="center">
+    <img src="https://github.com/mattyhakin/glucose_tracker/blob/main/glucose-header.png?raw=true" alt="Glucose Tracker"/>
+
+<p align="center">
   <a href="https://glucosetracker-4nhbmymvcbnhqdgpx79vjn.streamlit.app">
     <img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" alt="Open in Streamlit">
   </a>
